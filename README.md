@@ -1,4 +1,4 @@
-# ultilites_for_VK
+# ultilities_for_VK
 
 This extension can:
 .) disable the "Seen" feature of VK messages.
