@@ -5,16 +5,24 @@ var settings = {
     'block_story_seen': false
 };
 
+
 chrome.runtime.onConnect.addListener(function(port){
   if (port.name == 'settings'){
     port.onMessage.addListener(function(msg){
       settings['block_chat_seen'] = msg.block_chat_seen;
       settings['block_typing_indicator'] = msg.block_typing_indicator;
       settings['block_story_seen'] = msg.block_story_seen;
-      console.log(msg);
+      chrome.storage.sync.set(settings);
     });
   };
 })
+
+for(let key in settings){
+  chrome.storage.sync.get([key], function(old_settings){
+    settings[key] = old_settings[key];
+  })
+}
+
 
 chrome.browserAction.onClicked.addListener(function() {
    chrome.tabs.create({'url': 'popup.html'}, function(tab) {
