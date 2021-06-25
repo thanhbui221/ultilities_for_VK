@@ -5,6 +5,11 @@ var settings = {
     'block_story_seen': false
 };
 
+chrome.runtime.onInstalled.addListener(function (object) {
+    chrome.tabs.create({url: "popup.html"}, function (tab) {
+    });
+});
+
 
 chrome.runtime.onConnect.addListener(function(port){
   if (port.name == 'settings'){
