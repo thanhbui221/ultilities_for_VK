@@ -5,6 +5,10 @@ var settings = {
     'block_story_seen': false
 };
 
+chrome.runtime.onInstalled.addListener(function (object) {
+    chrome.tabs.create({url: "popup.html"}, function (tab) {
+    });
+});
 
 chrome.runtime.onConnect.addListener(function(port){
   if (port.name == 'settings'){
@@ -22,7 +26,6 @@ for(let key in settings){
     settings[key] = old_settings[key];
   })
 }
-
 
 chrome.browserAction.onClicked.addListener(function() {
    chrome.tabs.create({'url': 'popup.html'}, function(tab) {
@@ -46,12 +49,12 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
-    if (details.requestBody && 'formData' in details.requestBody){
+    if (details.requestBody){
       return {
         cancel: settings['block_typing_indicator']
      };
     }
-    console.log(details.requestBody);
+    //console.log(details.requestBody);
   },
   // filters
   {urls: ['*://vk.com/al_im.php?act=a_activity']},
@@ -61,11 +64,13 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
+    if (details.requestBody){
       return {
         cancel: settings.block_story_seen
      };
+   }
   },
   // filters
-  {urls: ['*://*.vk.com/al_stories.php']},
+  {urls: ['*://*.vk.com/al_stories.php?act=read_stories']},
   // extraInfoSpec
   ['blocking']);

@@ -1,8 +1,8 @@
 
 {
-  "name": "Ultilities for VK",
+  "name": "VK Privacy",
   "version": "0.0.1",
-  "description": "Ultilities for VK",
+  "description": "VK Privacy",
   "permissions": [
     "contextMenus",
     "clipboardRead",
