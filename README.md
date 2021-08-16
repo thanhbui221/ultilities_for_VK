@@ -28,7 +28,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/thanhbui221/ultilities_for_VK/tree/official">
-    <img src="icons/icon16.png" alt="Logo" width="80" height="80">
+    <img src="icons/icon128.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">VK unseen</h3>
