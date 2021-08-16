@@ -1,15 +1,10 @@
 
 {
-  "name": "Ultilities for VK",
+  "name": "VK unseen",
   "version": "0.0.1",
-  "description": "Ultilities for VK",
+  "description": "Vk unseen",
   "permissions": [
-    "contextMenus",
-    "clipboardRead",
-    "clipboardWrite",
     "storage",
-    "tabs",
-    "activeTab",
     "webRequest",
     "webRequestBlocking",
     "*://*.vk.com/*"
