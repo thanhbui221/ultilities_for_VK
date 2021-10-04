@@ -7,7 +7,7 @@
 
   <h3 align="center">VK unseen</h3>
 
-</p> -->
+</p> 
 
 
 
@@ -60,7 +60,7 @@ In the future, I will publish this extension to Chorme store, and you can dowloa
 
 ### Prerequisites
 
-No need to
+
 
 ### Installation
 
